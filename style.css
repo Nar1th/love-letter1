@@ -1,12 +1,12 @@
-/* Full screen */
+/* Background */
 body {
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #e6e0ea;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
 }
 
 /* Wrapper */
@@ -17,10 +17,13 @@ body {
 /* Envelope */
 .envelope {
     position: relative;
-    width: 220px;
-    height: 150px;
-    background: #f08080;
+    width: 260px;
+    height: 180px;
+    background: #ff6f61;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
 /* Flap */
@@ -29,26 +32,47 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    border-left: 110px solid transparent;
-    border-right: 110px solid transparent;
-    border-bottom: 75px solid #ff6f61;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-bottom: 90px solid #ff4d4d;
     transform-origin: top;
-    transition: 0.4s;
+    transition: 0.5s;
+}
+
+/* Bottom shape */
+.envelope::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-left: 130px solid #ff7b7b;
+    border-right: 130px solid #ff7b7b;
+    border-top: 90px solid transparent;
 }
 
 /* Letter */
 .letter {
     position: absolute;
-    width: 90%;
-    height: 120px;
-    background: white;
-    top: 20px;
-    left: 5%;
-    padding: 10px;
-    font-size: 12px;
+    width: 85%;
+    background: #fff;
+    top: 25px;
+    left: 7.5%;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
-    border-radius: 6px;
-    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+
+.letter h3 {
+    margin: 0;
+    color: #ff4d6d;
+}
+
+.letter p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #444;
 }
 
 /* OPEN animation */
@@ -57,5 +81,27 @@ body {
 }
 
 .wrapper.open .letter {
-    transform: translateY(-80px);
+    transform: translateY(-100px);
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 25px;
+}
+
+.buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 2px solid #ff4d6d;
+    background: transparent;
+    color: #ff4d6d;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #ff4d6d;
+    color: white;
 }

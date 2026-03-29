@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Letter</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Love Letter 💌</title>
+    <link rel="stylesheet" href="style.css"
 </head>
 <body>
 
 <div class="wrapper">
 
     <div class="envelope" onclick="toggleEnvelope()">
+        
         <div class="letter">
-            <p>Dear Dalis 💖</p>
-            <p>You are amazing!</p>
-            <p>I really love you 😊</p>
+            <h3>To: Dalis 💖</h3>
+            <p>You are so beautiful</p>
+            <p>Every time I see you,</p>
+            <p>my world stops ❤️</p>
         </div>
+
+    </div>
+
+    <div class="buttons">
+        <button onclick="openEnvelope()">OPEN</button>
+        <button onclick="closeEnvelope()">CLOSE</button>
     </div>
 
 </div>
@@ -23,6 +31,14 @@
 <script>
     function toggleEnvelope() {
         document.querySelector(".wrapper").classList.toggle("open");
+    }
+
+    function openEnvelope() {
+        document.querySelector(".wrapper").classList.add("open");
+    }
+
+    function closeEnvelope() {
+        document.querySelector(".wrapper").classList.remove("open");
     }
 </script>
 
