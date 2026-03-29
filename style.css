@@ -1,0 +1,61 @@
+/* Full screen */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e6e0ea;
+    font-family: Arial, sans-serif;
+}
+
+/* Wrapper */
+.wrapper {
+    text-align: center;
+}
+
+/* Envelope */
+.envelope {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    background: #f08080;
+    cursor: pointer;
+}
+
+/* Flap */
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
+    border-bottom: 75px solid #ff6f61;
+    transform-origin: top;
+    transition: 0.4s;
+}
+
+/* Letter */
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 120px;
+    background: white;
+    top: 20px;
+    left: 5%;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.4s;
+}
+
+/* OPEN animation */
+.wrapper.open .envelope::before {
+    transform: rotateX(180deg);
+}
+
+.wrapper.open .letter {
+    transform: translateY(-80px);
+}
